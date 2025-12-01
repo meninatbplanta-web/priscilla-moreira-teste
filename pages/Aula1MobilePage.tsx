@@ -13,6 +13,9 @@ import MobileProfileCarousel from '../components/mobile/MobileProfileCarousel';
 import MobileExerciseSection from '../components/mobile/MobileExerciseSection';
 import MobileQuizSection from '../components/mobile/MobileQuizSection';
 import MobileCompletionSection from '../components/mobile/MobileCompletionSection';
+import MobileCountdownSection from '../components/mobile/MobileCountdownSection';
+import MobileMaterialSection from '../components/mobile/MobileMaterialSection';
+import MobileTestimonialsSection from '../components/mobile/MobileTestimonialsSection';
 
 const Aula1MobilePage: React.FC = () => {
   const navigate = useNavigate();
@@ -206,6 +209,12 @@ const Aula1MobilePage: React.FC = () => {
             />
           )}
         </div>
+
+        <MobileCountdownSection targetDate="2025-12-01T20:00:00" />
+
+        <MobileMaterialSection pdfUrl="https://priscilla-moreira.com/imagens/PDF-MINICURSO-ANALISTA-CORPORAL.pdf" />
+
+        <MobileTestimonialsSection />
 
         {completionSection && (
           <MobileCompletionSection
