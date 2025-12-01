@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 interface Testimonial {
   id: number;
@@ -10,6 +10,8 @@ interface Testimonial {
 }
 
 const MobileTestimonialsSection: React.FC = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
   const testimonials: Testimonial[] = [
     {
       id: 1,
@@ -61,6 +63,16 @@ const MobileTestimonialsSection: React.FC = () => {
     },
   ];
 
+  const handlePrevious = () => {
+    setCurrentIndex((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1));
+  };
+
+  const handleNext = () => {
+    setCurrentIndex((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1));
+  };
+
+  const currentTestimonial = testimonials[currentIndex];
+
   return (
     <div className="px-4 py-6">
       <div className="bg-white dark:bg-neutral-900 rounded-3xl p-6 border border-gray-200 dark:border-neutral-800">
@@ -86,49 +98,83 @@ const MobileTestimonialsSection: React.FC = () => {
           </p>
         </div>
 
-        {/* Testimonials List */}
-        <div className="space-y-4">
-          {testimonials.map((testimonial) => (
-            <div
-              key={testimonial.id}
-              className="bg-gray-50 dark:bg-neutral-800 rounded-2xl p-4 border border-gray-100 dark:border-neutral-700"
-            >
-              {/* User Info */}
-              <div className="flex items-start gap-3 mb-3">
-                <div className="text-3xl">{testimonial.avatar}</div>
-                <div className="flex-1">
-                  <div className="flex items-center gap-2">
-                    <h3 className="font-semibold text-gray-900 dark:text-white text-sm">
-                      {testimonial.name}
-                    </h3>
-                    <span className="text-blue-500 text-sm">✓</span>
-                  </div>
-                  <p className="text-xs text-gray-500 dark:text-neutral-400">
-                    {testimonial.date}
-                  </p>
+        {/* Carousel Container */}
+        <div className="relative">
+          {/* Testimonial Card */}
+          <div className="bg-gray-50 dark:bg-neutral-800 rounded-2xl p-5 border border-gray-100 dark:border-neutral-700 min-h-[280px] flex flex-col">
+            {/* User Info */}
+            <div className="flex items-start gap-3 mb-4">
+              <div className="text-4xl">{currentTestimonial.avatar}</div>
+              <div className="flex-1">
+                <div className="flex items-center gap-2">
+                  <h3 className="font-semibold text-gray-900 dark:text-white text-base">
+                    {currentTestimonial.name}
+                  </h3>
+                  <span className="text-blue-500 text-base">✓</span>
                 </div>
-                <div className="flex gap-1">
-                  {[...Array(5)].map((_, i) => (
-                    <span key={i} className="text-yellow-400 text-sm">⭐</span>
-                  ))}
-                </div>
+                <p className="text-xs text-gray-500 dark:text-neutral-400">
+                  {currentTestimonial.date}
+                </p>
               </div>
-
-              {/* Testimonial Text */}
-              <p className="text-sm text-gray-700 dark:text-neutral-300 leading-relaxed mb-3">
-                {testimonial.text}
-              </p>
-
-              {/* Likes */}
-              <div className="flex items-center gap-2">
-                <button className="flex items-center gap-1 text-gray-600 dark:text-neutral-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5" />
-                  </svg>
-                  <span className="text-xs font-medium">{testimonial.likes}</span>
-                </button>
+              <div className="flex gap-1">
+                {[...Array(5)].map((_, i) => (
+                  <span key={i} className="text-yellow-400 text-sm">⭐</span>
+                ))}
               </div>
             </div>
+
+            {/* Testimonial Text */}
+            <p className="text-sm text-gray-700 dark:text-neutral-300 leading-relaxed mb-4 flex-1">
+              {currentTestimonial.text}
+            </p>
+
+            {/* Likes */}
+            <div className="flex items-center gap-2">
+              <button className="flex items-center gap-1 text-gray-600 dark:text-neutral-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5" />
+                </svg>
+                <span className="text-sm font-medium">{currentTestimonial.likes}</span>
+              </button>
+            </div>
+          </div>
+
+          {/* Navigation Buttons */}
+          <div className="absolute top-1/2 -translate-y-1/2 left-0 right-0 flex justify-between pointer-events-none px-2">
+            <button
+              onClick={handlePrevious}
+              className="pointer-events-auto w-10 h-10 rounded-full bg-white dark:bg-neutral-800 border-2 border-gray-200 dark:border-neutral-700 shadow-lg flex items-center justify-center hover:bg-gray-50 dark:hover:bg-neutral-700 transition-colors -ml-5"
+              aria-label="Depoimento anterior"
+            >
+              <svg className="w-5 h-5 text-gray-700 dark:text-neutral-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+            <button
+              onClick={handleNext}
+              className="pointer-events-auto w-10 h-10 rounded-full bg-white dark:bg-neutral-800 border-2 border-gray-200 dark:border-neutral-700 shadow-lg flex items-center justify-center hover:bg-gray-50 dark:hover:bg-neutral-700 transition-colors -mr-5"
+              aria-label="Próximo depoimento"
+            >
+              <svg className="w-5 h-5 text-gray-700 dark:text-neutral-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        {/* Dots Indicator */}
+        <div className="flex justify-center gap-2 mt-6">
+          {testimonials.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentIndex(index)}
+              className={`h-2 rounded-full transition-all duration-300 ${
+                index === currentIndex
+                  ? 'w-8 bg-blue-600 dark:bg-blue-500'
+                  : 'w-2 bg-gray-300 dark:bg-neutral-600'
+              }`}
+              aria-label={`Ir para depoimento ${index + 1}`}
+            />
           ))}
         </div>
 
