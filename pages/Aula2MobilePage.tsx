@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useTheme } from '../contexts/ThemeContext';
 import { useAula2Progress } from '../hooks/useAula2Progress';
 import aula2Data from '../data/aula2-nova.json';
+import { ArrowUp, Minimize2, Activity, Zap, RefreshCcw, Eye, Mic, Flame, Wind } from 'lucide-react';
 
 import MobileHeader from '../components/mobile/MobileHeader';
 import MobileBottomNav from '../components/mobile/MobileBottomNav';
@@ -11,8 +12,6 @@ import MobileMediaPlayer from '../components/mobile/MobileMediaPlayer';
 import MobileExerciseSection from '../components/mobile/MobileExerciseSection';
 import MobileQuizSection from '../components/mobile/MobileQuizSection';
 import MobileCompletionSection from '../components/mobile/MobileCompletionSection';
-import MobileCountdownSection from '../components/mobile/MobileCountdownSection';
-import MobileMaterialSection from '../components/mobile/MobileMaterialSection';
 import MobileTestimonialsSection from '../components/mobile/MobileTestimonialsSection';
 
 const Aula2MobilePage: React.FC = () => {
@@ -213,13 +212,19 @@ const Aula2MobilePage: React.FC = () => {
                       {cabecaTab.label}
                     </h2>
                     <div className="space-y-4">
-                      {cabecaTab.content.map((card: any) => (
+                      {cabecaTab.content.map((card: any) => {
+                        const iconMap: Record<string, React.ReactNode> = {
+                          'Zap': <Zap className="w-5 h-5" />,
+                          'RefreshCcw': <RefreshCcw className="w-5 h-5" />,
+                          'Eye': <Eye className="w-5 h-5" />,
+                        };
+                        return (
                         <div
                           key={card.id}
                           className="p-4 rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800"
                         >
                           <div className="flex items-start gap-3 mb-2">
-                            <span className="text-xl">{card.icon}</span>
+                            <span className="text-xl">{iconMap[card.icon] || card.icon}</span>
                             <div className="flex-1">
                               <h3 className="font-bold text-gray-900 dark:text-white">
                                 {card.name}
@@ -261,13 +266,19 @@ const Aula2MobilePage: React.FC = () => {
                       {nucleoTab.label}
                     </h2>
                     <div className="space-y-4">
-                      {nucleoTab.content.map((card: any) => (
+                      {nucleoTab.content.map((card: any) => {
+                        const iconMap: Record<string, React.ReactNode> = {
+                          'Mic': <Mic className="w-5 h-5" />,
+                          'Flame': <Flame className="w-5 h-5" />,
+                          'Wind': <Wind className="w-5 h-5" />,
+                        };
+                        return (
                         <div
                           key={card.id}
                           className="p-4 rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800"
                         >
                           <div className="flex items-start gap-3 mb-2">
-                            <span className="text-xl">{card.icon}</span>
+                            <span className="text-xl">{iconMap[card.icon] || card.icon}</span>
                             <div className="flex-1">
                               <h3 className="font-bold text-gray-900 dark:text-white">
                                 {card.name}
@@ -297,8 +308,8 @@ const Aula2MobilePage: React.FC = () => {
                             {isSectionCompleted(card.id) ? '✓ Concluído' : card.buttonText}
                           </button>
                         </div>
-                      ))}
-                    </div>
+                      );
+                      })}
                   </div>
                 )}
 
@@ -309,13 +320,19 @@ const Aula2MobilePage: React.FC = () => {
                       {estruturaTab.label}
                     </h2>
                     <div className="space-y-4">
-                      {estruturaTab.content.map((card: any) => (
+                      {estruturaTab.content.map((card: any) => {
+                        const iconMap: Record<string, React.ReactNode> = {
+                          'ArrowUp': <ArrowUp className="w-5 h-5" />,
+                          'Minimize2': <Minimize2 className="w-5 h-5" />,
+                          'Activity': <Activity className="w-5 h-5" />,
+                        };
+                        return (
                         <div
                           key={card.id}
                           className="p-4 rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800"
                         >
                           <div className="flex items-start gap-3 mb-2">
-                            <span className="text-xl">{card.icon}</span>
+                            <span className="text-xl">{iconMap[card.icon] || card.icon}</span>
                             <div className="flex-1">
                               <h3 className="font-bold text-gray-900 dark:text-white">
                                 {card.name}
@@ -345,7 +362,8 @@ const Aula2MobilePage: React.FC = () => {
                             {isSectionCompleted(card.id) ? '✓ Concluído' : card.buttonText}
                           </button>
                         </div>
-                      ))}
+                      );
+                      })}
                     </div>
                   </div>
                 )}
@@ -375,10 +393,6 @@ const Aula2MobilePage: React.FC = () => {
             />
           )}
         </div>
-
-        <MobileCountdownSection targetDate="2025-12-03T20:00:00" />
-
-        <MobileMaterialSection pdfUrl="https://priscilla-moreira.com/imagens/PDF-MINICURSO-ANALISTA-CORPORAL.pdf" />
 
         <MobileTestimonialsSection />
 

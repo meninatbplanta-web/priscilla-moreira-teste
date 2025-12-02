@@ -16,13 +16,13 @@
       "lessons": [
         {
           "id": 1,
-          "title": "Aula 1: Fundamentos da Leitura Biológica",
+          "title": "Aula 1: Fundamentos da Analise Corporal",
           "duration": "60:00",
           "status": "completed"
         },
         {
           "id": 2,
-          "title": "Aula 2: A Origem Emocional das Doenças",
+          "title": "Aula 2: O Corpo Grita (Psicossomática)",
           "duration": "55:00",
           "status": "active"
         },
@@ -41,9 +41,11 @@
       ]
     },
     "video_player": {
-      "video_id": "video_aula_2",
-      "title": "Aula 2: O Corpo Grita",
-      "status": "playing"
+      "placeholder_text": "ESTREIA DIA 03/12 às 20h",
+      "locked_message": {
+        "title": "📅 A AULA 2 COMEÇA EM BREVE",
+        "text": "A transmissão oficial da Aula 2 começará dia 03/12 às 20h. Prepare seu material."
+      }
     }
   },
   "lesson_content": {

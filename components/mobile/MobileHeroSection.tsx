@@ -1,5 +1,6 @@
 import React from 'react';
 import { Play, Calendar, Clock } from 'lucide-react';
+import { useEffect, useState } from 'react';
 
 interface MobileHeroSectionProps {
   bannerUrl: string;
@@ -23,8 +24,43 @@ const MobileHeroSection: React.FC<MobileHeroSectionProps> = ({
   lockedMessage,
   onStartStudy,
 }) => {
+  const [timeLeft, setTimeLeft] = useState<string>('');
+
+  useEffect(() => {
+    const calculateTimeLeft = () => {
+      const targetDate = new Date('2025-12-03T20:00:00').getTime();
+      const now = new Date().getTime();
+      const difference = targetDate - now;
+
+      if (difference > 0) {
+        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
+        const minutes = Math.floor((difference / 1000 / 60) % 60);
+        const seconds = Math.floor((difference / 1000) % 60);
+        setTimeLeft(`${days}d ${hours}h ${minutes}m ${seconds}s`);
+      } else {
+        setTimeLeft('Aula ao vivo!');
+      }
+    };
+
+    calculateTimeLeft();
+    const timer = setInterval(calculateTimeLeft, 1000);
+    return () => clearInterval(timer);
+  }, []);
   return (
     <section className="relative">
+      {!isVideoUnlocked && timeLeft && (
+        <div className="mb-4 bg-gradient-to-r from-red-50 to-pink-50 dark:from-red-950/30 dark:to-pink-950/30 rounded-xl p-3 border border-red-200 dark:border-red-800/50">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <Clock className="w-4 h-4 text-red-600 dark:text-red-400" />
+              <span className="text-xs font-bold text-red-900 dark:text-red-200 uppercase">Contador</span>
+            </div>
+            <span className="text-sm font-bold text-red-700 dark:text-red-300">{timeLeft}</span>
+          </div>
+        </div>
+      )}
+
       {isVideoUnlocked ? (
         <>
           <div className="relative w-full aspect-video overflow-hidden rounded-2xl bg-black">

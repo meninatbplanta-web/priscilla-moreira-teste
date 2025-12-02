@@ -16,7 +16,7 @@
       "lessons": [
         {
           "id": 1,
-          "title": "Aula 1: Fundamentos da Leitura Biológica",
+          "title": "Aula 1: Fundamentos da Analise Corporal",
           "duration": "60:00",
           "status": "active"
         },
@@ -50,7 +50,7 @@
   },
   "lesson_content": {
     "metadata": {
-      "title": "Aula 1: Fundamentos da Leitura Biológica",
+      "title": "Aula 1: Fundamentos da Analise Corporal",
       "subtitle": "O Mapa Científico da Mente",
       "completion_percentage": 25,
       "gamification": {
