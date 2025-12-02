@@ -2,12 +2,12 @@
   "page_structure": {
     "banner": {
       "image_url": "https://priscilla-moreira.com/imagens/minicurso-banner2.jpg",
-      "alt_text": "Banner da Aula 2: O Corpo Grita"
+      "alt_text": "Banner Aula 2: O Corpo Grita"
     },
     "header_info": {
       "badge": {
-        "text": "FORMAÇÃO GRATUITA",
-        "color": "blue"
+        "text": "AULA LIBERADA",
+        "color": "green"
       },
       "title": "Minicurso de Introdução à Análise Corporal"
     },
@@ -22,13 +22,13 @@
         },
         {
           "id": 2,
-          "title": "Aula 2: O Corpo Grita (Psicossomática)",
-          "release_date": "2025-12-03T20:00:00",
+          "title": "Aula 2: A Origem Emocional das Doenças",
+          "duration": "55:00",
           "status": "active"
         },
         {
           "id": 3,
-          "title": "Prática: Análise em Tempo Real",
+          "title": "Prática: Fisiognomia (Leitura de Rosto)",
           "release_date": "2025-12-05T20:00:00",
           "status": "locked"
         },
@@ -41,38 +41,24 @@
       ]
     },
     "video_player": {
-      "placeholder_text": "ESTREIA DIA 03/12 às 20h",
-      "locked_message": {
-        "title": "📅 AULA AGENDADA",
-        "text": "A transmissão oficial da Aula 2 começará dia 03/12 às 20h. Prepare seu material."
-      }
+      "video_id": "video_aula_2",
+      "title": "Aula 2: O Corpo Grita",
+      "status": "playing"
     }
   },
   "lesson_content": {
     "metadata": {
-      "title": "Aula 2: O Corpo Grita (Psicossomática)",
-      "subtitle": "A Origem Emocional das Doenças",
-      "completion_percentage": 25,
+      "title": "Aula 2: A Origem Emocional das Doenças",
+      "subtitle": "Decodificando os Gritos do Corpo",
+      "completion_percentage": 50,
       "gamification": {
-        "pointsPerSection": 50,
+        "pointsPerSection": 60,
         "badges": {
-          "iniciante": {
-            "label": "Estudante",
-            "icon": "📚",
-            "color": "bg-gray-100 text-gray-800",
-            "threshold": 3
-          },
-          "explorador": {
-            "label": "Analista Jr.",
-            "icon": "📝",
-            "color": "bg-blue-100 text-blue-800",
-            "threshold": 6
-          },
-          "mestre": {
-            "label": "Analista de Elite",
-            "icon": "🎓",
-            "color": "bg-green-100 text-green-800",
-            "threshold": 11
+          "detetive": {
+            "label": "Detetive da Dor",
+            "icon": "🔍",
+            "color": "bg-indigo-100 text-indigo-800",
+            "threshold": 100
           }
         }
       }
@@ -80,258 +66,299 @@
     "header": {
       "progressLabel": "Progresso da Certificação",
       "certificateInfo": {
-        "title": "Meta: 100%",
-        "text": "Complete as 4 aulas para liberar o Certificado Profissional."
+        "title": "Meta: 50%",
+        "text": "Você está na metade do caminho para se tornar um Analista."
       }
     },
     "sections": [
       {
         "id": "intro",
         "type": "intro",
-        "title": "Seja bem-vindo à Aula 2: O Corpo Grita",
-        "subtitle": "A doença é a solução que o seu corpo encontrou para te avisar.",
+        "title": "A Doença é uma Solução",
+        "subtitle": "\"O corpo reage para te parar.\"",
         "content": [
-          "Ontem, fizemos um 'Raio-X' do formato do corpo, aprendendo sobre os 5 Traços de Caráter. Hoje, vamos tocar num assunto que incomoda: a somatização.",
-          "Muitas vezes, não respeitamos nosso formato, tentando ser quem não somos. Quando vivemos em guerra com nossa natureza, o corpo reage gerando um sintoma ou uma doença. O corpo grita o que a boca calou por anos.",
-          "Nesta aula, você aprenderá a traduzir esses gritos, fazendo um scanner da cabeça aos pés para ser um 'detetive da dor'."
+          "Muitas vezes, passamos a vida tentando ser quem não somos. Forçamos o Esquizoide a ser sociável ou proibimos o Oral de chorar. Quando vivemos em guerra com nossa natureza, o corpo não fica quieto.",
+          "Nesta aula, você aprenderá que o sintoma não é o problema, mas a solução que seu corpo encontrou para avisar que algo está errado. Vamos fazer um 'scanner' da cabeça aos pés."
         ],
         "next_step": {
-          "label": "Aprender a Lei da Lateralidade ↓",
-          "target_id": "lateralidade"
+          "label": "Iniciar Scanner Corporal ↓",
+          "target_id": "multimedia"
         }
       },
       {
-        "id": "lateralidade",
+        "id": "multimedia",
         "type": "multimedia",
-        "title": "1. A Lei da Lateralidade",
+        "title": "1. Material de Apoio - Aula 2",
         "items": [
           {
-            "id": "lateralidade_card",
-            "type": "card",
-            "title": "O Lado Direito (Masculino/Ação)",
-            "subtitle": "O cérebro é cruzado, e o corpo divide o mundo em dois lados.",
-            "text": "O **Lado Direito** do corpo é o lado do **MASCULINO** e da **Ação** ('Ir para o mundo'). Representa problemas com: Pai, Marido, Filho homem, Chefe, Trabalho e Dinheiro (a caça). Se você machuca o lado direito, seu corpo diz: 'Eu tenho um conflito com um homem ou com a minha carreira'.",
-            "buttonText": "Entendi o Lado Direito"
+            "id": "audio_lateralidade",
+            "type": "audio",
+            "title": "A Regra da Lateralidade (Áudio)",
+            "subtitle": "Entenda Lado Direito x Esquerdo (10 min)",
+            "url": "https://priscilla-moreira.com/imagens/audio-cpl2.m4a",
+            "buttonText": "Ouvir Explicação"
           },
           {
-            "id": "lateralidade_card_2",
-            "type": "card",
-            "title": "O Lado Esquerdo (Feminino/Acolher)",
-            "subtitle": "O lado do FEMININO e do Acolher.",
-            "text": "O **Lado Esquerdo** do corpo é o lado do **FEMININO** e do **Sentir** ('Acolher'). Representa problemas com: Mãe, Esposa, Filha mulher, Família e Lar. Se você tem um problema na perna esquerda, pode haver uma questão familiar ou emocional travando seu passo.",
-            "buttonText": "Entendi o Lado Esquerdo"
+            "id": "mapa_sintomas",
+            "type": "pdf",
+            "title": "PDF: O Mapa dos Sintomas",
+            "subtitle": "Guia rápido de dores e emoções",
+            "url": "https://priscilla-moreira.com/downloads/mapa-sintomas.pdf",
+            "buttonText": "Baixar PDF"
           }
         ],
         "next_step": {
-          "label": "Ler os Sintomas da Cabeça →",
-          "target_id": "cabeca"
+          "label": "Aprender a Regra de Ouro →",
+          "target_id": "tabs_doencas"
         }
       },
       {
-        "id": "cabeca",
+        "id": "tabs_doencas",
         "type": "tabs",
         "tabs": [
           {
-            "id": "cabeca_sintomas",
-            "label": "2. Cabeça e Sentidos",
+            "id": "lateralidade",
+            "label": "2. Regra da Lateralidade",
+            "content": [
+              {
+                "id": "lat_intro",
+                "type": "card",
+                "title": "O Cérebro Cruzado",
+                "text": "O corpo divide o mundo em dois lados. Isso muda tudo no diagnóstico emocional.",
+                "buttonText": "Ver Lados"
+              },
+              {
+                "id": "lado_direito",
+                "type": "highlight_card",
+                "title": "Lado Direito (Masculino)",
+                "text": "Representa Ação, Pai, Marido, Filho Homem, Chefe, Trabalho e Dinheiro. É o lado da caça e do 'ir para o mundo'.",
+                "buttonText": "Entendi: Direito = Pai/Trabalho",
+                "style": "blue"
+              },
+              {
+                "id": "lado_esquerdo",
+                "type": "highlight_card",
+                "title": "Lado Esquerdo (Feminino)",
+                "text": "Representa Sentir, Acolher, Mãe, Esposa, Filha Mulher, Família e Lar. É o lado do ninho.",
+                "buttonText": "Entendi: Esquerdo = Mãe/Família",
+                "style": "pink"
+              }
+            ],
+            "next_step": {
+              "label": "Examinar Cabeça e Sentidos →",
+              "target_id": "cabeca_sentidos"
+            }
+          },
+          {
+            "id": "cabeca_sentidos",
+            "label": "3. Cabeça e Sentidos",
             "content": [
               {
                 "id": "enxaqueca",
-                "type": "alert_card",
-                "title": "1. Enxaqueca",
-                "subtitle": "O grito do CONTROLE.",
-                "text": "É o freio de emergência para uma mente que não descansa. A dor te obriga a parar de pensar. Comum em traços Rígido e Masoquista (perfeccionistas e que guardam tudo).",
-                "list": [
-                  "Não se permite errar.",
-                  "Ruminando pensamentos à noite."
-                ],
-                "buttonText": "Concluir"
+                "type": "trait_card",
+                "name": "Enxaqueca",
+                "archetype": "Causa: Excesso de Controle",
+                "icon": "Zap",
+                "color": "text-purple-600",
+                "body": "Comum em Rígidos e Masoquistas.",
+                "pain": "Significado: 'Preciso parar de pensar'.",
+                "power": "O corpo cria a dor para forçar o descanso mental.",
+                "buttonText": "Estudo Concluído"
               },
               {
                 "id": "labirintite",
-                "type": "alert_card",
-                "title": "2. Labirintite e Tontura",
-                "subtitle": "Sentimento de estar PERDIDO.",
-                "text": "A pessoa se sente sem chão, sem saber qual decisão tomar, ou não querendo ouvir o que estão dizendo. Ela perde o eixo porque emocionalmente já está sem chão.",
-                "list": [
-                  "Não sei para onde ir.",
-                  "Não quero ouvir."
-                ],
-                "buttonText": "Concluir"
+                "type": "trait_card",
+                "name": "Labirintite",
+                "archetype": "Causa: Perda de Eixo",
+                "icon": "RefreshCcw",
+                "color": "text-gray-500",
+                "body": "Sensação de mundo girando.",
+                "pain": "Significado: 'Estou perdido' ou 'Não sei para onde ir'.",
+                "power": "Falta de chão emocional.",
+                "buttonText": "Estudo Concluído"
               },
               {
                 "id": "visao_audicao",
-                "type": "alert_card",
-                "title": "3. Visão e Audição",
-                "subtitle": "O corpo é literal.",
-                "text": "Ouvido inflama: 'O que você está cansado de ouvir e não aguenta mais?' (Críticas, brigas). Vista embaça: 'O que você não quer ver?' (Algo doloroso que o corpo prefere apagar a imagem).",
-                "list": [
-                  "Ouvido: O não aguento mais ouvir.",
-                  "Visão: O que não quero ver."
-                ],
-                "buttonText": "Concluir"
+                "type": "trait_card",
+                "name": "Visão e Audição",
+                "archetype": "Causa: Negação da Realidade",
+                "icon": "Eye",
+                "color": "text-blue-500",
+                "body": "Inflamações e dores locais.",
+                "pain": "Significado: 'O que você não quer ver?' ou 'O que cansou de ouvir?'.",
+                "power": "O corpo apaga a imagem ou bloqueia o som doloroso.",
+                "buttonText": "Estudo Concluído"
               }
             ],
             "next_step": {
-              "label": "Ir para Sintomas do Núcleo →",
+              "label": "Examinar o Núcleo (Tronco) →",
               "target_id": "nucleo"
             }
-          }
-        ]
-      },
-      {
-        "id": "nucleo",
-        "type": "tabs",
-        "tabs": [
+          },
           {
-            "id": "nucleo_sintomas",
-            "label": "3. O Núcleo (Tronco)",
+            "id": "nucleo",
+            "label": "4. O Núcleo (Tronco)",
             "content": [
               {
                 "id": "garganta",
-                "type": "alert_card",
-                "title": "4. Garganta e Tireoide",
-                "subtitle": "O grito do NÃO DITO.",
-                "text": "A garganta é o canal da expressão. Dor, amigdalite, nódulos são o que você queria gritar, mas calou. Quando você engole sua verdade para agradar os outros, sua garganta inflama.",
-                "list": [
-                  "Verdade engolida.",
-                  "Choro entalado."
-                ],
-                "buttonText": "Concluir"
+                "type": "trait_card",
+                "name": "Garganta e Tireoide",
+                "archetype": "Canal da Expressão",
+                "icon": "Mic",
+                "color": "text-red-400",
+                "body": "Nódulos, amigdalite, inflamação.",
+                "pain": "Significado: O grito do 'não dito'. O choro entalado.",
+                "power": "Engolir a verdade inflama a barreira física.",
+                "buttonText": "Estudo Concluído"
               },
               {
-                "id": "asma",
-                "type": "alert_card",
-                "title": "5. Asma e Bronquite",
-                "subtitle": "Medo da vida e APEGO.",
-                "text": "Problemas respiratórios estão ligados ao medo da vida e ao apego. É o corpo dizendo: 'Estou sufocado por esse ambiente' ou 'Preciso de alguém respirando por mim'. Grito de socorro por afeto e segurança.",
-                "list": [
-                  "Medo de respirar sozinho.",
-                  "Sufocado pelo ambiente."
-                ],
-                "buttonText": "Concluir"
+                "id": "estomago",
+                "type": "trait_card",
+                "name": "Estômago (Gastrite)",
+                "archetype": "Digestão de Emoções",
+                "icon": "Flame",
+                "color": "text-orange-500",
+                "body": "Queimação, refluxo, gastrite.",
+                "pain": "Significado: Raiva não expressa. 'Sapo engolido'.",
+                "power": "O ácido tenta derreter a situação indigesta (ex: humilhação).",
+                "buttonText": "Estudo Concluído"
               },
               {
-                "id": "gastrite",
-                "type": "alert_card",
-                "title": "6. Gastrite, Azia e Estômago",
-                "subtitle": "A RAIVA não expressa.",
-                "text": "A gastrite é a raiva não expressa. O estômago produz ácido para tentar 'derreter' a situação indigesta (o 'sapo' que você teve que engolir). A queimação é a sua raiva queimando você por dentro.",
-                "list": [
-                  "Sapo engolido.",
-                  "Raiva que não pôde queimar o outro."
-                ],
-                "buttonText": "Concluir"
+                "id": "pulmao",
+                "type": "trait_card",
+                "name": "Pulmão (Asma)",
+                "archetype": "Medo da Vida",
+                "icon": "Wind",
+                "color": "text-sky-300",
+                "body": "Falta de ar, bronquite.",
+                "pain": "Significado: Medo de respirar sozinho. Apego excessivo.",
+                "power": "Comum no traço Oral (medo do abandono).",
+                "buttonText": "Estudo Concluído"
               }
             ],
             "next_step": {
-              "label": "Ir para Sintomas da Estrutura →",
+              "label": "Examinar Estrutura Física →",
               "target_id": "estrutura"
             }
-          }
-        ]
-      },
-      {
-        "id": "estrutura",
-        "type": "tabs",
-        "tabs": [
+          },
           {
-            "id": "estrutura_sintomas",
-            "label": "4. Estrutura (Sustentação)",
+            "id": "estrutura",
+            "label": "5. Estrutura",
             "content": [
               {
-                "id": "costas",
-                "type": "alert_card",
-                "title": "7. Dor nas Costas",
-                "subtitle": "O peso da RESPONSABILIDADE.",
-                "text": "Dores na parte de cima (ombros): Você carrega mochilas que não são suas. Dores na Lombar: Medo financeiro ou medo de não dar conta. O medo da escassez trava a lombar.",
-                "list": [
-                  "Ombros: Peso da responsabilidade.",
-                  "Lombar: Medo financeiro/escassez."
-                ],
-                "buttonText": "Concluir"
+                "id": "coluna",
+                "type": "trait_card",
+                "name": "Coluna e Costas",
+                "archetype": "Sustentação",
+                "icon": "ArrowUp",
+                "color": "text-yellow-600",
+                "body": "Dores na lombar ou trapézio.",
+                "pain": "Alta: Peso da responsabilidade. Lombar: Medo financeiro.",
+                "power": "Carregar mochilas que não são suas.",
+                "buttonText": "Estudo Concluído"
               },
               {
                 "id": "joelhos",
-                "type": "alert_card",
-                "title": "8. Joelhos",
-                "subtitle": "ORGULHO e inflexibilidade.",
-                "text": "Dores no joelho falam de 'Eu não me dobro para ninguém' ou medo de se submeter. Pessoas Rígidas, que não aceitam perder, costumam ter o joelho travado.",
-                "list": [
-                  "Não aceito essa situação.",
-                  "Quebro, mas não dobro."
-                ],
-                "buttonText": "Concluir"
+                "type": "trait_card",
+                "name": "Joelhos",
+                "archetype": "Flexibilidade",
+                "icon": "Minimize2",
+                "color": "text-slate-700",
+                "body": "Travamento ou dor articular.",
+                "pain": "Significado: Orgulho. 'Não me dobro para ninguém'.",
+                "power": "Resistência em se submeter ou aceitar situações.",
+                "buttonText": "Estudo Concluído"
               },
               {
-                "id": "fibromialgia",
-                "type": "alert_card",
-                "title": "9. Fibromialgia",
-                "subtitle": "Dor na alma que transborda.",
-                "text": "Dor moral tão grande que vira dor física em todos os pontos. É a dor do arrependimento e da humilhação silenciosa.",
-                "list": [
-                  "Dor do arrependimento.",
-                  "Humilhação silenciosa."
-                ],
-                "buttonText": "Concluir"
+                "id": "fibro",
+                "type": "trait_card",
+                "name": "Fibromialgia",
+                "archetype": "Dor na Alma",
+                "icon": "Activity",
+                "color": "text-purple-800",
+                "body": "Dor difusa pelo corpo todo.",
+                "pain": "Significado: Arrependimento e humilhação silenciosa.",
+                "power": "Típico de Masoquistas/Orais que se anularam demais.",
+                "buttonText": "Estudo Concluído"
               }
             ],
             "next_step": {
-              "label": "Ir para o Quiz Final →",
-              "target_id": "quiz-section"
+              "label": "Ir para Prática de Diagnóstico →",
+              "target_id": "exercises-section-2"
             }
           }
         ]
       },
       {
-        "id": "quiz-section",
-        "type": "quiz",
-        "title": "5. Teste de Conhecimento Técnico",
-        "questions": [
-          {
-            "id": 1,
-            "question": "Problemas no lado direito do corpo estão relacionados a conflitos com qual aspecto?",
-            "options": [
-              "Família e Ninho (Feminino)",
-              "Ação e Mundo (Masculino)",
-              "Sentimentos e Acolhimento"
-            ],
-            "correctAnswer": "Ação e Mundo (Masculino)"
-          },
-          {
-            "id": 2,
-            "question": "Qual sintoma é o 'grito do CONTROLE' e um 'freio de emergência' para a mente?",
-            "options": [
-              "Gastrite",
-              "Asma",
-              "Enxaqueca"
-            ],
-            "correctAnswer": "Enxaqueca"
-          },
-          {
-            "id": 3,
-            "question": "A dor na lombar (parte baixa das costas) está frequentemente ligada a qual medo?",
-            "options": [
-              "Medo de abandono",
-              "Medo financeiro/escassez",
-              "Medo de ser humilhado"
-            ],
-            "correctAnswer": "Medo financeiro/escassez"
-          }
-        ],
+        "id": "exercises-section-2",
+        "type": "exercise",
+        "title": "6. Prática: Detetive da Dor",
+        "content": {
+          "id": "ex_lateralidade",
+          "title": "Aplicando a Lateralidade",
+          "instructions": [
+            "Pense em uma dor recorrente sua ou de alguém próximo.",
+            "Identifique o lado: É Direito ou Esquerdo?",
+            "Consulte a regra: Direito (Pai/Trabalho) ou Esquerdo (Mãe/Família)?",
+            "Escreva abaixo qual conflito emocional pode estar ligado a essa dor."
+          ],
+          "placeholder": "Ex: Dor no ombro direito = Sobrecarga no trabalho...",
+          "buttonText": "Registrar Diagnóstico"
+        },
         "next_step": {
-          "label": "Finalizar Missão da Aula 2",
-          "target_id": "completion_card"
+          "label": "Fazer Teste de Sintomas →",
+          "target_id": "quiz-section-2"
         }
       },
       {
-        "id": "completion_card",
+        "id": "quiz-section-2",
+        "type": "quiz",
+        "title": "7. Teste de Anatomia Emocional",
+        "questions": [
+          {
+            "id": 1,
+            "question": "Na regra da lateralidade, o que representa uma dor no lado DIREITO?",
+            "options": [
+              "Mãe e Família",
+              "Pai, Trabalho e Dinheiro",
+              "Apenas questões financeiras"
+            ],
+            "correctAnswer": "Pai, Trabalho e Dinheiro"
+          },
+          {
+            "id": 2,
+            "question": "O que a gastrite (estômago) geralmente representa emocionalmente?",
+            "options": [
+              "Medo do futuro",
+              "Raiva não expressa (sapo engolido)",
+              "Excesso de alegria"
+            ],
+            "correctAnswer": "Raiva não expressa (sapo engolido)"
+          },
+          {
+            "id": 3,
+            "question": "Dores nos joelhos estão associadas a qual sentimento?",
+            "options": [
+              "Orgulho e inflexibilidade",
+              "Medo de abandono",
+              "Culpa"
+            ],
+            "correctAnswer": "Orgulho e inflexibilidade"
+          }
+        ],
+        "next_step": {
+          "label": "Finalizar Aula 2",
+          "target_id": "completion_card_2"
+        }
+      },
+      {
+        "id": "completion_card_2",
         "type": "lesson_completion",
         "status": "locked",
-        "title": "PARABÉNS! 50% CONCLUÍDO",
-        "message": "Você finalizou o estudo preparatório da Aula 2. Agora, aguarde a liberação da Aula 3 para continuar sua jornada rumo ao Certificado.",
+        "title": "AULA 2 CONCLUÍDA!",
+        "message": "Você aprendeu a ouvir os gritos do corpo. Mas existe um mapa ainda mais detalhado, estampado na cara de todo mundo: O Rosto.",
         "next_lesson_info": {
-          "title": "Aula 3: Fisiognomia (Lendo o Rosto)",
+          "title": "Aula 3: Fisiognomia (Leitura de Rosto)",
           "release_date": "05/12 às 20h",
           "buttonText": "Definir Lembrete da Aula 3",
           "action": "calendar_reminder"
