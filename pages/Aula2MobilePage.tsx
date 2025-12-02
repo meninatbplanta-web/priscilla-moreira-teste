@@ -16,6 +16,8 @@ import MobileTestimonialsSection from '../components/mobile/MobileTestimonialsSe
 
 import MobileCountdownSection from '../components/mobile/MobileCountdownSection';
 
+import { useLessonStatus } from '../hooks/useLessonStatus';
+
 const Aula2MobilePage: React.FC = () => {
   const navigate = useNavigate();
   const { theme, toggleTheme } = useTheme();
@@ -26,6 +28,10 @@ const Aula2MobilePage: React.FC = () => {
     saveQuizAnswer,
     isSectionCompleted,
   } = useAula2Progress();
+
+  const { dynamicLessons, nextLessonInfo } = useLessonStatus(2);
+  const currentLesson = dynamicLessons.find(l => l.id === 2);
+  const isVideoUnlocked = currentLesson?.status === 'active';
 
   const [activeSection, setActiveSection] = useState('teoria');
 
@@ -98,7 +104,7 @@ const Aula2MobilePage: React.FC = () => {
     detetive: 'Detetive da Dor',
   };
 
-  const isVideoUnlocked = new Date() >= new Date('2025-12-03T20:00:00');
+
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-neutral-950 transition-colors duration-300">
@@ -411,8 +417,8 @@ const Aula2MobilePage: React.FC = () => {
             title={completionSection.title}
             message={completionSection.message}
             progressPercentage={metadata.completion_percentage}
-            lessons={page_structure.lesson_list.lessons}
-            nextLessonInfo={completionSection.next_lesson_info}
+            lessons={dynamicLessons}
+            nextLessonInfo={nextLessonInfo || completionSection.next_lesson_info}
           />
         )}
       </main>

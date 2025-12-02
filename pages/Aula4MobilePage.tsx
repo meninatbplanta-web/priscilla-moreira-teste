@@ -11,6 +11,8 @@ import MobileHeroSection from '../components/mobile/MobileHeroSection';
 import MobileCompletionSection from '../components/mobile/MobileCompletionSection';
 import MobileCountdownSection from '../components/mobile/MobileCountdownSection';
 
+import { useLessonStatus } from '../hooks/useLessonStatus';
+
 const Aula4MobilePage: React.FC = () => {
     const navigate = useNavigate();
     const { theme, toggleTheme } = useTheme();
@@ -19,6 +21,10 @@ const Aula4MobilePage: React.FC = () => {
         completeSection,
         isSectionCompleted,
     } = useAula4Progress();
+
+    const { dynamicLessons } = useLessonStatus(4);
+    const currentLesson = dynamicLessons.find(l => l.id === 4);
+    const isVideoUnlocked = currentLesson?.status === 'active';
 
     const [activeSection, setActiveSection] = useState('teoria');
 
@@ -59,7 +65,7 @@ const Aula4MobilePage: React.FC = () => {
     // Using a future date or current date depending on logic. 
     // The JSON says status: active, so let's assume it's unlocked or check date.
     // Let's use the release date from lesson list if available, or just unlock it for now as it is "active".
-    const isVideoUnlocked = true;
+
 
     const renderSection = (section: any) => {
         const isCompleted = isSectionCompleted(section.id);
@@ -298,7 +304,7 @@ const Aula4MobilePage: React.FC = () => {
                         title="CURSO CONCLUÍDO!"
                         message="Você completou a jornada de introdução à Análise Corporal."
                         progressPercentage={metadata.completion_percentage}
-                        lessons={page_structure.lesson_list.lessons}
+                        lessons={dynamicLessons}
                         nextLessonInfo={{
                             title: "Certificado",
                             release_date: "Disponível",

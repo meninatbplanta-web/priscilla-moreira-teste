@@ -16,6 +16,8 @@ import MobileCompletionSection from '../components/mobile/MobileCompletionSectio
 import MobileMaterialSection from '../components/mobile/MobileMaterialSection';
 import MobileTestimonialsSection from '../components/mobile/MobileTestimonialsSection';
 
+import { useLessonStatus } from '../hooks/useLessonStatus';
+
 const Aula1MobilePage: React.FC = () => {
   const navigate = useNavigate();
   const { theme, toggleTheme } = useTheme();
@@ -26,6 +28,8 @@ const Aula1MobilePage: React.FC = () => {
     saveQuizAnswer,
     isSectionCompleted,
   } = useAula1Progress();
+
+  const { dynamicLessons, nextLessonInfo } = useLessonStatus(1);
 
   const [activeSection, setActiveSection] = useState('teoria');
 
@@ -105,7 +109,8 @@ const Aula1MobilePage: React.FC = () => {
     mestre: 'Analista Elite',
   };
 
-  const isVideoUnlocked = new Date() >= new Date('2025-12-01T20:00:00');
+  const currentLesson = dynamicLessons.find(l => l.id === 1);
+  const isVideoUnlocked = currentLesson?.status === 'active';
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-neutral-950 transition-colors duration-300">
@@ -218,8 +223,8 @@ const Aula1MobilePage: React.FC = () => {
             title={completionSection.title}
             message={completionSection.message}
             progressPercentage={progress.progressPercentage}
-            lessons={page_structure.lesson_list.lessons}
-            nextLessonInfo={completionSection.next_lesson_info}
+            lessons={dynamicLessons}
+            nextLessonInfo={nextLessonInfo || completionSection.next_lesson_info}
           />
         )}
       </main>

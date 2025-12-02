@@ -11,6 +11,8 @@ import MobileHeroSection from '../components/mobile/MobileHeroSection';
 import MobileCompletionSection from '../components/mobile/MobileCompletionSection';
 import MobileCountdownSection from '../components/mobile/MobileCountdownSection';
 
+import { useLessonStatus } from '../hooks/useLessonStatus';
+
 const Aula3MobilePage: React.FC = () => {
     const navigate = useNavigate();
     const { theme, toggleTheme } = useTheme();
@@ -19,6 +21,10 @@ const Aula3MobilePage: React.FC = () => {
         completeSection,
         isSectionCompleted,
     } = useAula3Progress();
+
+    const { dynamicLessons, nextLessonInfo } = useLessonStatus(3);
+    const currentLesson = dynamicLessons.find(l => l.id === 3);
+    const isVideoUnlocked = currentLesson?.status === 'active';
 
     const [activeSection, setActiveSection] = useState('teoria');
 
@@ -57,7 +63,7 @@ const Aula3MobilePage: React.FC = () => {
         detetive: 'Leitor de Rostos',
     };
 
-    const isVideoUnlocked = new Date() >= new Date('2025-12-05T20:00:00');
+
 
     const renderSection = (section: any) => {
         const isCompleted = isSectionCompleted(section.id);
@@ -82,8 +88,8 @@ const Aula3MobilePage: React.FC = () => {
                         <button
                             onClick={() => handleCompleteSection(section.id)}
                             className={`mt-4 w-full py-2 rounded-xl text-sm font-semibold transition-colors ${isCompleted
-                                    ? 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400'
-                                    : 'bg-gray-100 text-gray-700 dark:bg-neutral-800 dark:text-neutral-300'
+                                ? 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400'
+                                : 'bg-gray-100 text-gray-700 dark:bg-neutral-800 dark:text-neutral-300'
                                 }`}
                         >
                             {isCompleted ? 'Leitura Concluída ✓' : 'Marcar como Lido'}
@@ -107,8 +113,8 @@ const Aula3MobilePage: React.FC = () => {
                         <button
                             onClick={() => handleCompleteSection(section.id)}
                             className={`mt-4 w-full py-2 rounded-xl text-sm font-semibold transition-colors ${isCompleted
-                                    ? 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400'
-                                    : 'bg-gray-100 text-gray-700 dark:bg-neutral-800 dark:text-neutral-300'
+                                ? 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400'
+                                : 'bg-gray-100 text-gray-700 dark:bg-neutral-800 dark:text-neutral-300'
                                 }`}
                         >
                             {isCompleted ? 'Estudo Concluído ✓' : 'Marcar como Estudado'}
@@ -131,8 +137,8 @@ const Aula3MobilePage: React.FC = () => {
                         <button
                             onClick={() => handleCompleteSection(section.id)}
                             className={`mt-4 w-full py-2 rounded-xl text-sm font-semibold transition-colors ${isCompleted
-                                    ? 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400'
-                                    : 'bg-gray-100 text-gray-700 dark:bg-neutral-800 dark:text-neutral-300'
+                                ? 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400'
+                                : 'bg-gray-100 text-gray-700 dark:bg-neutral-800 dark:text-neutral-300'
                                 }`}
                         >
                             {isCompleted ? 'Análise Concluída ✓' : 'Concluir Análise'}
@@ -161,8 +167,8 @@ const Aula3MobilePage: React.FC = () => {
                         <button
                             onClick={() => handleCompleteSection(section.id)}
                             className={`mt-4 w-full py-2 rounded-xl text-sm font-semibold transition-colors ${isCompleted
-                                    ? 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400'
-                                    : 'bg-blue-600 text-white shadow-sm hover:bg-blue-700'
+                                ? 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400'
+                                : 'bg-blue-600 text-white shadow-sm hover:bg-blue-700'
                                 }`}
                         >
                             {isCompleted ? 'Exercício Realizado ✓' : 'Confirmar Exercício'}
@@ -187,8 +193,8 @@ const Aula3MobilePage: React.FC = () => {
                         <button
                             onClick={() => handleCompleteSection(section.id)}
                             className={`mt-4 w-full py-2 rounded-xl text-sm font-semibold transition-colors ${isCompleted
-                                    ? 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400'
-                                    : 'bg-gray-100 text-gray-700 dark:bg-neutral-800 dark:text-neutral-300'
+                                ? 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400'
+                                : 'bg-gray-100 text-gray-700 dark:bg-neutral-800 dark:text-neutral-300'
                                 }`}
                         >
                             {isCompleted ? 'Seção Concluída ✓' : 'Marcar como Concluído'}
@@ -209,8 +215,8 @@ const Aula3MobilePage: React.FC = () => {
                         <button
                             onClick={() => handleCompleteSection(section.id)}
                             className={`mt-4 w-full py-2 rounded-xl text-sm font-semibold transition-colors ${isCompleted
-                                    ? 'bg-amber-200 text-amber-800 dark:bg-amber-800 dark:text-amber-100'
-                                    : 'bg-amber-100 text-amber-800 dark:bg-amber-900/40 dark:text-amber-100'
+                                ? 'bg-amber-200 text-amber-800 dark:bg-amber-800 dark:text-amber-100'
+                                : 'bg-amber-100 text-amber-800 dark:bg-amber-900/40 dark:text-amber-100'
                                 }`}
                         >
                             {isCompleted ? 'Entendido ✓' : 'Entendi o Alerta'}
@@ -285,8 +291,8 @@ const Aula3MobilePage: React.FC = () => {
                         title="AULA 3 CONCLUÍDA!"
                         message="Você completou o estudo da Fisiognomia."
                         progressPercentage={metadata.completion_percentage}
-                        lessons={page_structure.lesson_list.lessons}
-                        nextLessonInfo={{
+                        lessons={dynamicLessons}
+                        nextLessonInfo={nextLessonInfo || {
                             title: "Aula 4: Carreira",
                             release_date: "07/12 às 15h",
                             buttonText: "Definir Lembrete"
