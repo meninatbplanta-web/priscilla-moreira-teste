@@ -37,7 +37,7 @@ export const MINICOURSE_MODULE: Module = {
       courseId: 'minicourse',
       moduleId: 1,
       title: "Análise corporal ao vivo",
-      releaseDate: `${CURRENT_YEAR}-12-05T20:00:00`,
+      releaseDate: `${CURRENT_YEAR}-12-01T20:00:00`,
       duration: "60:00",
       isLocked: false,
     },

@@ -157,7 +157,7 @@ const LessonPlayer: React.FC = () => {
           <iframe
             width="100%"
             height="100%"
-            src="https://www.youtube.com/embed/zLz7AYdBoGU"
+            src={`https://www.youtube.com/embed/${currentJson?.page_structure?.video_player?.video_id || 'zLz7AYdBoGU'}`}
             title="Vídeo Demonstrativo"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
