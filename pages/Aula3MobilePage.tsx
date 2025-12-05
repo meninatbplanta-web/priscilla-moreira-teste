@@ -267,12 +267,6 @@ const Aula3MobilePage: React.FC = () => {
             />
 
             <main className="pb-20">
-                <MobileCountdownSection
-                    targetDate="2025-12-05T20:00:00"
-                    title="AULA 3 DISPONÍVEL EM BREVE"
-                    subTitle="A transmissão oficial começará dia 05/12/2025 às 20:00"
-                />
-
                 <div className="px-4 py-4">
                     <LessonSchedule
                         currentLessonId={3}
@@ -286,6 +280,8 @@ const Aula3MobilePage: React.FC = () => {
                         subtitle={metadata.subtitle}
                         badge={page_structure.header_info.badge.text}
                         isVideoUnlocked={isVideoUnlocked}
+                        videoUrl={`https://www.youtube.com/embed/${page_structure.video_player.video_id}`}
+                        videoTitle={metadata.title}
                         lockedMessage={page_structure.video_player.locked_message}
                         onStartStudy={handleStartStudy}
                     />
