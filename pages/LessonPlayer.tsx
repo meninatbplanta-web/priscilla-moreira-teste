@@ -165,13 +165,7 @@ const LessonPlayer: React.FC = () => {
             className="w-full h-full"
           ></iframe>
 
-          {/* Premiere Mask */}
-          <div className="absolute inset-0 flex items-center justify-center bg-black/80 z-10 pointer-events-none">
-            <div className="text-center">
-              <h3 className="text-2xl font-heading font-bold text-white mb-2">ESTREIA</h3>
-              <p className="text-xl text-brand-red font-bold">DIA 01/12 às 20hs</p>
-            </div>
-          </div>
+
         </div>
       ) : (
         <div className="absolute inset-0 flex flex-col items-center justify-center bg-gray-100 dark:bg-neutral-950 text-center p-6 transition-colors duration-300">
@@ -274,13 +268,7 @@ const LessonPlayer: React.FC = () => {
                   </p>
                 </div>
 
-                {/* Premiere Notice - Hardcoded for now, or could come from JSON */}
-                <div className="flex flex-col md:flex-row items-center justify-center gap-3 text-brand-red font-bold mb-8 bg-red-50 dark:bg-red-900/10 p-4 rounded-xl border border-red-100 dark:border-red-900/20 text-center md:text-left animate-pulse-slow">
-                  <div className="p-2 bg-red-100 dark:bg-red-900/30 rounded-full">
-                    <Lock size={20} />
-                  </div>
-                  <span className="text-sm md:text-base">ESTREIA EXCLUSIVA: 01/12 às 20h — A aula com Priscilla Moreira será liberada aqui neste horário. Agende-se.</span>
-                </div>
+
 
                 {renderVideoSection()}
 
